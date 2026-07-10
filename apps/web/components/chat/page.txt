@@ -1,0 +1,120 @@
+"use client";
+
+import { Send, Bot, User } from "lucide-react";
+
+export default function ChatPage() {
+  return (
+    <div className="h-[85vh] flex flex-col">
+
+      {/* Header */}
+      <div className="border-b border-slate-800 pb-4">
+        <h1 className="text-3xl font-bold">AI Assistant</h1>
+        <p className="text-slate-400 mt-2">
+          Ask anything about Endur, PnL or uploaded documents
+        </p>
+      </div>
+
+      {/* Chat Area */}
+      <div className="flex-1 overflow-auto py-8 space-y-8">
+
+        {/* User */}
+        <div className="flex gap-4">
+
+          <div className="bg-blue-600 p-3 rounded-full h-fit">
+            <User size={18}/>
+          </div>
+
+          <div className="bg-slate-900 rounded-xl p-5 max-w-3xl">
+            Explain Instrument Fixing in Endur.
+          </div>
+
+        </div>
+
+        {/* AI */}
+
+        <div className="flex gap-4">
+
+          <div className="bg-green-600 p-3 rounded-full h-fit">
+            <Bot size={18}/>
+          </div>
+
+          <div className="bg-slate-900 rounded-xl p-5 max-w-5xl">
+
+            <h3 className="font-semibold mb-3">
+              Instrument Fixing
+            </h3>
+
+            <p>
+              Instrument Fixing is the process where a floating market price
+              is converted into a fixed settlement price based on a pricing
+              index and fixing date.
+            </p>
+
+            <br />
+
+            <p>
+              In Endur, fixing determines the final price for floating legs
+              of swaps, commodity contracts and financial instruments.
+            </p>
+
+            <br />
+
+            <div className="bg-slate-800 rounded-lg p-4">
+
+              📚 Source
+
+              <br />
+
+              Endur Trading Manual.pdf
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+      <div className="flex gap-3 mb-6 flex-wrap">
+
+  <button className="bg-slate-800 px-4 py-2 rounded-lg">
+    Explain Instrument Fixing
+  </button>
+
+  <button className="bg-slate-800 px-4 py-2 rounded-lg">
+    Analyze today's PnL
+  </button>
+
+  <button className="bg-slate-800 px-4 py-2 rounded-lg">
+    Generate SQL
+  </button>
+
+  <button className="bg-slate-800 px-4 py-2 rounded-lg">
+    Explain ab_tran table
+  </button>
+
+</div>
+
+      {/* Input */}
+
+      <div className="border-t border-slate-800 pt-5">
+
+        <div className="flex gap-4">
+
+          <input
+            className="flex-1 bg-slate-900 rounded-xl p-4 outline-none"
+            placeholder="Ask EndurMind AI..."
+          />
+
+          <button className="bg-blue-600 px-6 rounded-xl">
+
+            <Send/>
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+  );
+}
